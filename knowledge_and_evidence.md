@@ -68,52 +68,67 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name       | value          |
-   | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+| Type                     | name           | value                                |
+|--------------------------|----------------|--------------------------------------|
+| built-in primitive type  | dimmed         | True                                 |
+| built-in composite type  | self.pixels    | [O, Y, Y, Y, Y, Y, Y, O,             |
+|                          |                |  Y, Y, Y, Y, Y, Y, Y, Y,             |
+|                          |                |  Y, Y, Y, Y, Y, Y, Y, Y,             |
+|                          |                |  Y, Y, Y, Y, Y, Y, Y, Y,             |
+|                          |                |  Y, Y, Y, Y, Y, Y, Y, Y,             |
+|                          |                |  Y, Y, Y, Y, Y, Y, Y, Y,             |
+|                          |                |  Y, Y, Y, Y, Y, Y, Y, Y,             |
+|                          |                |  O, Y, Y, Y, Y, Y, Y, O]             |
+| user-defined type        | self.sense_hat | SenseHat()                           |
+
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
    | Object                   | Type                    |
    | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | self.pixels              | List                    |
+   | A member of self.pixels  | Y                       |
+   | self                     | Argument                |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
    | Control Flow | File       | First line  | Line range  |
    | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   |  sequence    | smiley.py  | 13          | 13          |
+   |  selection   | sad.py     | 25          | 5           |
+   |  iteration   | happy.py   | 20, 29      | 2, 2        |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | int                     | N     | word = 007 |
+   | float                   | Y     | delay=0.25 |
+   | str                     | N     | word = "no"|
+   | bool                    | Y     | dimmed=True|
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
 > Your answer here
->
+> Class elderly:
+> this is the class variable, which will be able to be called later
+>     def __ini__ (self, name, age):
+>     self.name = name
+>     self.age = age
+>     these are the instance variable, which is a variable within a class,
+>     used for call a certain aspect of the class.
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
    > Your answer here
-   >
+   > Automaically gets called when a new instance of the class is created. in this context,
+   > i would assume it uses a part of smiley.py and essentially 'append' to it
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
    > Your answer here
-   >
+   > 'append' or add a new callable instance of the class to be used in a function later on
 
 ### 2.3. Code style
 
