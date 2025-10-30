@@ -10,7 +10,7 @@ class Smiley:
     BLANK = (0, 0, 0)
 
     def complexion(self):
-    """Return the default face complexion color."""
+        """Return the default face complexion color."""
         return self.YELLOW
             
     def __init__(self):
