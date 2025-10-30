@@ -135,17 +135,24 @@ python3 main.py
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
 
 > Your answer here
->
+> SenseHat and the rest of the code uses cases, because most of the name of variable or other things that need to be manually named
+> uses underscore(_) to seperate each word
 
 2. List three aspects of this convention you see applied in the code.
 
 > Your answer here
->
+> sense_hat, dim_display, draw_mouth
 
 3. Give two examples of organizational documentation in the code.
 
 > Your answer here
->
+> """
+        Set the SenseHat's light intensity to low (True) or high (False)
+        :param dimmed: Dim the display if True, otherwise don't dim
+  """
+> """
+   Provides a Smiley with a happy expression
+  """
 
 ### 2.4. Identifying and understanding classes
 
@@ -158,17 +165,21 @@ python3 main.py
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
 | NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+| Smiley     | Sup           |      ...         |
+| Happy      | Sub           | Smiley, Blinkable|
+| Blinkable  | Sup           |                  | 
+| Sad        | Sub           | Smiley           |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
 > Your answer here
->
+> abstraction is a process of hiding this that are not relevant for the user to know. The blinkable class is an example, it decide what blink must do,
+> not how to do it
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
 > Your answer here
->
+> Inheritance, the purpose of inheritance is commonly the same everywhere it is used; which is to simplified and making the code reuseable
 
 ### 2.5. Compare and contrast classes
 
@@ -176,29 +187,31 @@ Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
    > Your answer here
-   >
+   > the main difference is that sad only inherited from smiley, where happy inherits both smiley and blinkable
 2. What are the key similarities?
    > Your answer here
-   >
+   > both inherits from smiley
 3. What difference stands out the most to you and why?
    > Your answer here
-   >
+   > its how say uses an if statement anchoring if the eye is open or not to do somothing
+   > while happy, who has a trait of blinkable don't
 4. How does this difference affect the functionality of these classes
    > Your answer here
-   >
+   > happy can blink, sad can not.... how sad
 
 ### 2.6. Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
    > Your answer here
-   >
+   > technically only smiley, but happy and sad inherit from smiley
 2. Which of these classes directly interact with the SenseHat functionalities?
    > Your answer here
-   >
+   > smiley
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
-   >
-
+   > in the project, the sensehat is hidden away in smiley through encapsulation. smiley create a private instance of sensehat using self.sense_hat,
+   > this prevent other classes that inherited from smiley to access sensehat, not directly atleast. based on my research, the sense hat can still be
+   > access by the child class with public method such as show() and other
 ### 2.7. Sad Smileys Can’t Blink (Or Can They?)
 
 Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does not possess the ability to blink. Let's first explore how blinking has been implemented in the Happy Smiley by examining the blink() method, which takes one argument that determines the duration of the blink.
