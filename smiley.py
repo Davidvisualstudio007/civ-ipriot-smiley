@@ -9,6 +9,10 @@ class Smiley:
     BLUE = (0, 0, 255)
     BLANK = (0, 0, 0)
 
+    def complexion(self):
+    """Return the default face complexion color."""
+    return self.YELLOW
+            
     def __init__(self):
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
