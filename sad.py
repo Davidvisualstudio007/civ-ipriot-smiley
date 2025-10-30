@@ -3,7 +3,7 @@ from blinkable import Blinkable
 from smiley import Smiley
 
 
-class Sad(Smiley, blinkable):
+class Sad(Smiley, Blinkable):
     def __init__(self):
         super().__init__()
 
