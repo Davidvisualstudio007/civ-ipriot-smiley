@@ -24,13 +24,10 @@ class Sad(Smiley, Blinkable):
         :param wide_open: Render eyes wide open or shut
         """
         eyes = [10, 13, 18, 21]
+        color = self.BLANK if wide_open else self.complexion()
         for pixel in eyes:
-            if wide_open:
-                eyes = self.BLANK
-            else:
-                eyes = self.complexion
-            self.pixels[pixel] = eyes
-    
+            self.pixels[pixel] = color
+
     def blink(self, delay=0.5):
         """
        Blinks the smiley's eyes once
