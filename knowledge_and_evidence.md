@@ -21,7 +21,8 @@ This document includes instructions and knowledge questions that must be complet
 ![Example Running Code](screenshots/screenshot1.png)
 ```
 
-![Sample](screenshots/sample.png)
+![Sample](![Uploading image.png…]()
+)
 > Note the `!`, and the use of a relative path.
 
 - You must upload the code into your GitHub repository.
@@ -53,7 +54,9 @@ Address the following tasks and questions based on the code provided in this rep
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
-![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
+![Local Execution (INSERT YOUR SCREENSHOT)](<img width="234" height="272" alt="Screenshot 2025-10-30 224244" src="https://github.com/user-attachments/assets/cd28a129-1535-4a58-bd95-29ab90f60def" />
+
+)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
@@ -165,7 +168,7 @@ python3 main.py
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
 | NotReal    | Sub           | NotRealParent    |
-| Smiley     | Sup           |      ...         |
+| Smiley     | Sup           |                  |
 | Happy      | Sub           | Smiley, Blinkable|
 | Blinkable  | Sup           |                  | 
 | Sad        | Sub           | Smiley           |
@@ -221,22 +224,24 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > Your answer here
->
+> every smiley except sad. because sad is not connected to the blinkable
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > Your answer here
->
+> no, happy has its own value to the blink funciton but main (or just smiley) call directly to blinkable
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
 > Your answer here
->
+> in this case, polymorphism can pass with blink(). Happy makes its own version of blink that do something different from the originalm,
+> this way if blink is called again in a different child class, it can be modify
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
 > Your answer here
->
+> inheritance is used when happy called blinkable as its method, along with smiley.
+> on why it is important with polymorphism is because in the code, we needed to change it, and so thats where polymorphism come in
 1. **Implement Blink in Sad Class:**
 
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
