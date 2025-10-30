@@ -16,8 +16,6 @@ def main():
     smiley.blink()
 
 if __name__ == '__main__':
-    print("test sad")
-
     freeze_support()
     main()
 
