@@ -11,7 +11,7 @@ class Smiley:
 
     def complexion(self):
     """Return the default face complexion color."""
-    return self.YELLOW
+        return self.YELLOW
             
     def __init__(self):
         # We have encapsulated the SenseHat object
